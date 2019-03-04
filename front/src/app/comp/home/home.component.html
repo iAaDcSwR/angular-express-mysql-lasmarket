@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="jumbotron col mr-2">
+    <app-login *ngIf="!clientid; else helloBlock"></app-login>
+    <ng-template #helloBlock>
+      <div>
+        Hello, <strong>{{ clientname | titlecase }}</strong>!
+      </div>
+    </ng-template>
+    <div *ngIf="clientid">
+      <a [routerLink]="'shop'" (click)="maybeNewCart()">
+        <span *ngIf="activecartid == null; else resumeBlock">Start</span>
+        <ng-template #resumeBlock>Continue</ng-template>
+        Shopping
+      </a>
+    </div>
+  </div>
+  <div class="jumbotron col mr-2">
+    <h5 class="text-center">Why should I shop @ <strong>LASMarket</strong>?</h5>
+    <p><img src="https://i1.wp.com/www.eatthis.com/wp-content/uploads//media/images/ext/965218510/woman-grocery-shopping.jpg?fit=500%2C366&ssl=1"
+        width="100" class="float-left m-2">For almost 1 day now, <strong>LASMarket</strong> provides imaginary
+      customers from around the world with fresh produce and high-quality products to make your kitchen complete. In
+      fact, the products sold here @ <strong>LASMarket</strong> are so good, that they seem to be non-existent to the
+      human eye!</p>
+  </div>
+  <div class="text-center jumbotron col mr-2">PANEL C</div>
+</div>

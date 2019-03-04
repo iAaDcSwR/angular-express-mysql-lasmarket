@@ -1,0 +1,14 @@
+<h1>Register</h1>
+<form class="form-group col-7" [formGroup]="registerForm" (ngSubmit)="sendTheForm()">
+  <div>
+    <input type="text" formControlName="fname" placeholder="First Name" autocomplete="given-name" class="form-control" />
+    <input type="text" formControlName="lname" placeholder="Last Name" autocomplete="family-name" class="form-control" />
+    <input type="email" formControlName="email" placeholder="Email Address" autocomplete="email" class="form-control" />
+    <input type="text" formControlName="id" placeholder="ID Number" autocomplete class="form-control" />
+    <input type="password" formControlName="password" placeholder="Password" autocomplete="new-password" class="form-control" />
+    <input type="text" formControlName="city" placeholder="City" autocomplete class="form-control" />
+    <input type="text" formControlName="street" placeholder="Street" autocomplete class="form-control" />
+  </div>
+  <button type="submit" [disabled]="!registerForm.valid" class="btn btn-primary">Register</button>
+
+</form>
